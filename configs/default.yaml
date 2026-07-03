@@ -1,0 +1,37 @@
+project:
+  name: xbd-rs-mllm-agent
+  output_dir: outputs
+
+model:
+  backend: mock
+  model_name: Qwen/Qwen3.5-4B
+  device: auto
+  max_new_tokens: 512
+
+tools:
+  # 当前可直接运行：provided_mask / gt_mask / external_mask / diff_fallback / external_command
+  # xview2_baseline / xview2_strong_baseline 可通过 command 模板接入外部推理脚本
+  localization_backend: provided_mask
+  damage_backend: provided_mask
+  localization_command: ""
+  damage_command: ""
+  external_tool_timeout: 1800
+  xview2_repo: ""
+  xview2_localization_weights: ""
+  xview2_classification_weights: ""
+  xview2_conda_env: ""
+
+analysis:
+  diff_threshold: 35
+  min_component_area: 64
+  severe_damage_classes: [3, 4]
+
+xbd:
+  image_size: [1024, 1024]
+  damage_mapping:
+    no-damage: 1
+    minor-damage: 2
+    major-damage: 3
+    destroyed: 4
+    un-classified: 0
+    background: 0
