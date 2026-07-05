@@ -1,11 +1,20 @@
 # env
 .env
 .venv/
+.env.*
+!.env.example
+
+# Python cache / build artifacts
 __pycache__/
 *.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
 
 # data / weights
-data/
+data/*
+!data/README.md
 xBD/
 models/
 *.h5
@@ -14,11 +23,14 @@ models/
 *.pth
 *.bin
 *.safetensors
+*.ckpt
+*.onnx
 
 # outputs
 outputs/
 logs/
 wandb/
+runs/
 
 # system
 .DS_Store

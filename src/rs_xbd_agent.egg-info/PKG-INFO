@@ -1,5 +1,0 @@
-Metadata-Version: 2.4
-Name: rs-xbd-agent
-Version: 0.1.0
-Summary: Remote-sensing multimodal agent for xBD disaster damage assessment
-Requires-Python: >=3.10

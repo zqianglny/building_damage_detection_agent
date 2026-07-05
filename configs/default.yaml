@@ -9,8 +9,8 @@ model:
   max_new_tokens: 512
 
 tools:
-  # 当前可直接运行：provided_mask / gt_mask / external_mask / diff_fallback / external_command
-  # xview2_baseline / xview2_strong_baseline 可通过 command 模板接入外部推理脚本
+  # 当前可直接运行：provided_mask / gt_mask / external_mask / diff_fallback / external_command / xview2_baseline
+  # xview2_strong_baseline 需要通过 command 模板接入对应第三方推理脚本
   localization_backend: provided_mask
   damage_backend: provided_mask
   localization_command: ""
